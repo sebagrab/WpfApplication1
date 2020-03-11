@@ -1521,7 +1521,7 @@ namespace WpfApplication1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            /////////////// Mapowanie dysku
+            /////////////// Mapowanie dysku i otworzenie plików pythona
             Process myProcess = new Process();
 
             myProcess.StartInfo.FileName = @"cmd.exe";
@@ -1537,27 +1537,7 @@ namespace WpfApplication1
             myStreamWriter.Close();
             myProcess.WaitForExit();
             
-             ////////////
-
-            string fileName = @"\\\\plkwim0taxlog57\c$\opis\zdjecia\brak_zdjec.py";
-            
-            Process p = new Process();
-            
-            p.StartInfo = new ProcessStartInfo(@"\\\\plkwim0taxlog57\c$\Users\kwi_tester\AppData\Local\Programs\Python\Python38-32\python.exe", fileName)
-            {
-                
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            p.Start();
-
-            string output = p.StandardOutput.ReadToEnd();
-            p.WaitForExit();
-
-            Console.WriteLine(output);
-
-            Console.ReadLine();
+             ///////////
 
         }
 
