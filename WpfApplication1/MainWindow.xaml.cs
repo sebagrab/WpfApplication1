@@ -911,8 +911,8 @@ namespace WpfApplication1
                 if (znaleziono == "ok")
                 {
                     znaleziono = "nok";
-                    if (File.Exists("C:\\opis\\zdjecia\\" + fixtura + ".jpg"))
-                        Image1.Source = new BitmapImage(new Uri("C:\\opis\\zdjecia\\" + fixtura + ".jpg"));
+                    if (File.Exists("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"))
+                        Image1.Source = new BitmapImage(new Uri("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
                     fix = fixtura;
                     dupikat();
                    label1.Content = ("Fixtura nr " + fixtura);
@@ -932,7 +932,7 @@ namespace WpfApplication1
 
             ////////   numer stacji
             label7.Content = "";
-            string path1 = (@"c:\opis\" + fix + ".txt");
+            string path1 = (@"\\plkwim0taxlog57\\c$\opis\" + fix + ".txt");
             if (File.Exists(path1))
             {
 
@@ -974,14 +974,14 @@ namespace WpfApplication1
 
             zda = "";
             string kom = "0";
-                string path = (@"c:\opis\" + fix1 + ".txt");
+                string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix1 + ".txt");
                 if (File.Exists(path))
                 {
                     kom="1";
                      
                     StringBuilder sb = new StringBuilder();
-                    //string path = @"c:\x.txt"; ;
-                    // string path = (@"c:\opis\" + fix);
+                    //string path = @"\\plkwim0taxlog57\\c$\x.txt"; ;
+                    // string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix);
                     StreamReader sr = new StreamReader(path);
                     string sg = "";
 
@@ -1003,14 +1003,14 @@ namespace WpfApplication1
                 }
 
 
-            string path2 = (@"c:\opis\" + fix2 + ".txt");
+            string path2 = (@"\\plkwim0taxlog57\\c$\opis\" + fix2 + ".txt");
             if (File.Exists(path2))
             {
                 kom = "1";
                 
                 StringBuilder sb = new StringBuilder();
-                //string path = @"c:\x.txt"; ;
-                // string path = (@"c:\opis\" + fix);
+                //string path = @"\\plkwim0taxlog57\\c$\x.txt"; ;
+                // string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix);
                 StreamReader sr = new StreamReader(path2);
                 string sg = "";
 
@@ -1026,14 +1026,14 @@ namespace WpfApplication1
                 
             }
 
-            string path3 = (@"c:\opis\" + fix3 + ".txt");
+            string path3 = (@"\\plkwim0taxlog57\\c$\opis\" + fix3 + ".txt");
             if (File.Exists(path3))
             {
                 kom = "1";
                
                 StringBuilder sb = new StringBuilder();
-                //string path = @"c:\x.txt"; ;
-                // string path = (@"c:\opis\" + fix);
+                //string path = @"\\plkwim0taxlog57\\c$\x.txt"; ;
+                // string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix);
                 StreamReader sr = new StreamReader(path3);
                 string sg = "";
 
@@ -1050,14 +1050,14 @@ namespace WpfApplication1
                
             }
 
-            string path4 = (@"c:\opis\" + fix4 + ".txt");
+            string path4 = (@"\\plkwim0taxlog57\\c$\opis\" + fix4 + ".txt");
             if (File.Exists(path4))
             {
                 kom = "1";
                 
                 StringBuilder sb = new StringBuilder();
-                //string path = @"c:\x.txt"; ;
-                // string path = (@"c:\opis\" + fix);
+                //string path = @"\\plkwim0taxlog57\\c$\x.txt"; ;
+                // string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix);
                 StreamReader sr = new StreamReader(path4);
                 string sg = "";
 
@@ -1084,7 +1084,7 @@ namespace WpfApplication1
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            string path = (@"c:\opis\" + fix);
+            string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix);
             DirectoryInfo di = new DirectoryInfo(path);
             if (di.Exists)
             {
@@ -1096,13 +1096,13 @@ namespace WpfApplication1
         private void button4_Click(object sender, RoutedEventArgs e) //nowyy 
         {
             ////////   numer stacji------ odczyt opisu stacji
-            string path = (@"c:\opis\" + fix + ".txt");
+            string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix + ".txt");
             if (File.Exists(path))
             {
                 
                 StringBuilder sb = new StringBuilder();
-                //string path = @"c:\x.txt"; ;
-                // string path = (@"c:\opis\" + fix);
+                //string path = @"\\plkwim0taxlog57\\c$\x.txt"; ;
+                // string path = (@"\\plkwim0taxlog57\\c$\opis\" + fix);
                 StreamReader sr = new StreamReader(path);
                 string sg = "";
                 for (int i = 0; i < 10; i++)
@@ -1137,7 +1137,7 @@ namespace WpfApplication1
             ////////   numer stacji
             label6.Content = "";
             button5.Visibility = Visibility.Visible;
-            string path = (@"c:\opis\numery.txt");
+            string path = (@"\\plkwim0taxlog57\\c$\opis\numery.txt");
             if (File.Exists(path))
             {
                 this.label8.Background = System.Windows.Media.Brushes.White;
@@ -1264,7 +1264,7 @@ namespace WpfApplication1
 
 
         public void newfix()
-        {  string path = (@"c:\opis\fix.txt");
+        {  string path = (@"\\plkwim0taxlog57\\c$\opis\fix.txt");
         if (File.Exists(path))
         {
             string tx;
@@ -1356,7 +1356,7 @@ namespace WpfApplication1
 
         public void dupikat()
         {
-            string path = (@"c:\opis\duplikat.txt");
+            string path = (@"\\plkwim0taxlog57\\c$\opis\duplikat.txt");
             if (File.Exists(path))
             {    wiersz= 0;
                 int c = 0;
@@ -1464,7 +1464,7 @@ namespace WpfApplication1
             int c = 0;
             string tx = "";
             string plk = "";
-            string path = (@"c:\opis\FVT.txt");
+            string path = (@"\\plkwim0taxlog57\\c$\opis\FVT.txt");
             if (File.Exists(path))
             {
                 StringBuilder sb = new StringBuilder();

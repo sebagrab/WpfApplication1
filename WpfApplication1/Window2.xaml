@@ -19,7 +19,7 @@
         <Label Content="Numer fixtury" Height="40" Margin="6,186,171,0" Name="label3" VerticalAlignment="Top" Grid.Column="1" />
         <Label Content="Program" Height="28" HorizontalAlignment="Left" Margin="14,63,0,0" Name="label4" VerticalAlignment="Top" Grid.Column="1" Width="82" />
         <Label Height="28" HorizontalAlignment="Left" Margin="107,63,0,0" Name="label5" VerticalAlignment="Top" Grid.Column="1" Width="109" />
-        <CheckBox x:Name="checkboxn" Content="Nowa fikstura" HorizontalAlignment="Left" Margin="4,231,0,0" VerticalAlignment="Top" Height="27" Width="103" Click="CheckBox_Click" Grid.Column="1"/>
+        <CheckBox x:Name="checkboxn" Content="Nowa fikstura" HorizontalAlignment="Left" Margin="5,231,0,0" VerticalAlignment="Top" Height="27" Width="103" Click="CheckBox_Click" Grid.Column="1"/>
         <Label x:Name="NumerTE" Content="Numer TE fikstury" HorizontalAlignment="Left" Margin="14,258,0,0" VerticalAlignment="Top" Width="115" Grid.Column="1" Height="26" Visibility="Hidden"/>
         <TextBox x:Name="tbnumerte" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="129,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
         <Label Content="Zeskanuj barkod" HorizontalAlignment="Left" Margin="5,26,0,0" VerticalAlignment="Top" Width="115" Grid.Column="1"/>

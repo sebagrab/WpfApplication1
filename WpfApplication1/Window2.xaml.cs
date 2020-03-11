@@ -121,7 +121,7 @@ namespace WpfApplication1
         public void zapis()
         {
             string zda = "";
-            string path = (@"c:\opis\fix.txt");
+            string path = (@"\\plkwim0taxlog57\\c$\opis\fix.txt");
             if (File.Exists(path))
             {
                 StringBuilder sb = new StringBuilder();
@@ -169,7 +169,7 @@ namespace WpfApplication1
                 {
                 string tx = "";
                
-                string path = (@"c:\opis\numeryTE.txt");
+                string path = (@"\\plkwim0taxlog57\\c$\opis\numeryTE.txt");
                 if (File.Exists(path))
                 {
                     StringBuilder sb = new StringBuilder();

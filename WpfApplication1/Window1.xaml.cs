@@ -27,7 +27,7 @@ namespace WpfApplication1
         string sg;
         public Window1()
         {
-          //  wbSample.Navigate(@"c:\opis\");
+          //  wbSample.Navigate(@"\\plkwim0taxlog57\\c$\opis\");
           //  textBox2.Text = (zda);
         //     a = Convert.ToString(b);
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace WpfApplication1
 
 
 
-            string path = (@"c:\opis\" + comboBox1.Text + ".txt");
+            string path = (@"\\plkwim0taxlog57\\c$\opis\info\" + comboBox1.Text + "\\" + txb_tytul.Text +  ".txt" );
 
             if (File.Exists(path))
             {
@@ -103,7 +103,7 @@ namespace WpfApplication1
             }
             else
             {
-                string plik = @"c:\opis\" + comboBox1.Text + ".txt";
+                string plik = @"\\plkwim0taxlog57\\c$\opis\info\" + comboBox1.Text +"\\"+txb_tytul.Text+".txt";
                 File.WriteAllText(plik, "end");
                 opisy();
 
@@ -112,7 +112,7 @@ namespace WpfApplication1
            
 
                // MessageBox.Show("Nie wybrano numeru fixtury");
-            //  string path = (@"c:\opis\" + comboBox1.Text + ".txt");
+            //  string path = (@"\\plkwim0taxlog57\\c$\opis\" + comboBox1.Text + ".txt");
 
 
             //   StreamWriter sw = new StreamWriter(path);
@@ -129,10 +129,11 @@ namespace WpfApplication1
         private void button1_Click(object sender, RoutedEventArgs e)
         {
 
-
-            opisy();
-
-
+            if (txb_tytul.Text != "" && textBox1.Text != "")
+            {
+                opisy();
+            }
+            MessageBox.Show("brak opisów'=");
 
         }
 
@@ -145,5 +146,7 @@ namespace WpfApplication1
 
 
         }
+
+        
     }
 }

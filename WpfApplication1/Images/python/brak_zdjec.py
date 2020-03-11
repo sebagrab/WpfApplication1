@@ -19,7 +19,7 @@ print(slowo.lower())
 print(slowo[2])
 print(slowo.find("o"))
 """""
-txt = Path('C:\\Users\\grabowss\\Desktop\\IP_MKwiag.txt').read_text()
+txt = Path('\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\IP_MKwiag.txt').read_text()
 print(txt.find('17'))
 k = txt.find("17")
 print(k)
@@ -36,20 +36,20 @@ def modification_date(filename):
     t = os.path.getmtime(filename)
     return datetime.datetime.fromtimestamp(t)
 
-d = modification_date('C:\\Users\\grabowss\\Desktop\\aaa.txt')
+d = modification_date('\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\aaa.txt')
 
 print (d)
-e = modification_date('C:\\Users\\grabowss\\Desktop\\aa.txt')
+e = modification_date('\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\aa.txt')
 
 print (e)
 if d > e:
     print("porównanie ok")
-    shutil.copyfile('C:\\Users\\grabowss\\Desktop\\IP_MKwiag.txt','C:\\Users\\grabowss\\Desktop\\A\\IP_MKwiag.txt')
+    shutil.copyfile('\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\IP_MKwiag.txt','\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\A\\IP_MKwiag.txt')
     k=1
 while e > d:
     print("ok")
-    txt = Path('C:\\Users\\grabowss\\Desktop\\aa.txt').read_text()
-    file = open('C:\\Users\\grabowss\\Desktop\\aa.txt','w')
+    txt = Path('\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\aa.txt').read_text()
+    file = open('\\plkwim0taxlog57\\c$\\Users\\grabowss\\Desktop\\aa.txt','w')
     file.write(txt+'\r\n')
     k=k+1
     file.write(str(k))
@@ -65,7 +65,7 @@ while e > d:
 """""
 bufor=0
 #\\\\plkwim0taxlog57\
-txt = Path('c:\opis\\fix.txt').read_text()
+txt = Path('\\plkwim0taxlog57\\c$\opis\\fix.txt').read_text()
 dlugoscTekstu=1
 while dlugoscTekstu <= (len(txt)-10):
     k = txt.find(";",dlugoscTekstu)
@@ -81,7 +81,7 @@ zdj=''
 i=1
 while i< int(bufor):
     #\\\\plkwim0taxlog57\\     zamiast $ to :
-    fname = "c:\\opis\\zdjecia\\"+ str(i)+'.jpg'
+    fname = "\\plkwim0taxlog57\\c$\\opis\\zdjecia\\"+ str(i)+'.jpg'
 
     if not os.path.isfile(fname):
         zdj = zdj + " ,"+str(i)
@@ -91,7 +91,7 @@ while i< int(bufor):
 
 print("Brak zdjęć :" , zdj[2:])
 #\\\\plkwim0taxlog57\\
-fileName = "c:\\opis\\zdjecia\\brak_zdjęć"
+fileName = "\\plkwim0taxlog57\\c$\\opis\\zdjecia\\brak_zdjęć"
 
 def create_file():
     with open(fileName+".txt", "w") as file:
