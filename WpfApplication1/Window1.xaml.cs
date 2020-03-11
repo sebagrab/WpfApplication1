@@ -147,6 +147,22 @@ namespace WpfApplication1
 
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog
+            Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Launch OpenFileDialog by calling ShowDialog method
+            Nullable<bool> result = openFileDlg.ShowDialog();
+            // Get the selected file name and display in a TextBox.
+            // Load content of file in a TextBlock
+            if (result == true)
+            {
+                FileNameTextBox.Text = openFileDlg.FileName;
+               string destFile = @"\\plkwim0taxlog57\\c$\\opis\\info\\" + comboBox1.Text + "\\" + txb_tytul.Text + ".pdf";
+                System.IO.File.Copy(FileNameTextBox.Text, destFile, true);
+
+            }
+        }
     }
 }

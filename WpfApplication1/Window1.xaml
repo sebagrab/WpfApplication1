@@ -12,5 +12,7 @@
         <ComboBox Height="23" HorizontalAlignment="Left" Margin="126,17,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" />
         <Label Content="Tytuł" HorizontalAlignment="Left" Margin="12,58,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txb_tytul" HorizontalAlignment="Left" Height="23" Margin="68,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" />
+        <Button Content="Button" HorizontalAlignment="Left" Margin="48,313,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Left" Height="23" Margin="68,347,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
