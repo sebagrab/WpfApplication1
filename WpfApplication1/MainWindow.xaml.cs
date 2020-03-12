@@ -913,6 +913,8 @@ namespace WpfApplication1
                     znaleziono = "nok";
                     if (File.Exists("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"))
                         Image1.Source = new BitmapImage(new Uri("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
+                    Image1.Source = new BitmapImage(new Uri("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
+                    Image1.Source = new BitmapImage(new Uri ("\\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
                     fix = fixtura;
                     dupikat();
                    label1.Content = ("Fixtura nr " + fixtura);
