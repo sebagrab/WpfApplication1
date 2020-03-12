@@ -25,6 +25,8 @@ namespace WpfApplication1
         string nove;
         string myString;
         string sg;
+        string plik="nie";
+        string z_kat = "";
         public Window1()
         {
           //  wbSample.Navigate(@"\\plkwim0taxlog57\\c$\opis\");
@@ -55,73 +57,17 @@ namespace WpfApplication1
 
 
 
-            string path = (@"\\plkwim0taxlog57\\c$\opis\info\" + comboBox1.Text + "\\" + txb_tytul.Text +  ".txt" );
+            
+            string plik = @"\\plkwim0taxlog57\\c$\opis\info\" + comboBox1.Text +"\\"+txb_tytul.Text+".txt";
+            
+            File.WriteAllText(plik, textBox1.Text);
+            MessageBox.Show("zapisano");
 
-            if (File.Exists(path))
-            {
-                StringBuilder sb = new StringBuilder(path);
-
-                StreamReader sr = new StreamReader(path);
-
-
-
-                while (sg != "end")// ;
-                {
-                    sg = sr.ReadLine();
-
-                    sb.AppendLine(sg);
-                    if (sg != "end")
-                    {
-                        if (zda != "")
-                            zda = (zda + "\r\n" + sg);
-
-                        if (zda == "")
-                            zda = (sg);
-
-                    }
-                } //while (sg != "end");
-                for (int i = 0; i < 50; i++)
-                {
-                    sg = sr.ReadLine();
-                    nove = (nove + "\r\n" + sg);
-
-                }
-                sr.Close();
-                StreamWriter sw = new StreamWriter(path);
-                sw.WriteLine(zda);
-
-                sw.WriteLine(textBox1.Text);
-
-                sw.WriteLine("end");
-
-                sw.WriteLine(nove);
-                sw.Close();
-                MessageBox.Show("Zapisano");
-
-                Close();
-
-            }
-            else
-            {
-                string plik = @"\\plkwim0taxlog57\\c$\opis\info\" + comboBox1.Text +"\\"+txb_tytul.Text+".txt";
-                File.WriteAllText(plik, "end");
-                opisy();
-
-            }
+            
 
            
 
-               // MessageBox.Show("Nie wybrano numeru fixtury");
-            //  string path = (@"\\plkwim0taxlog57\\c$\opis\" + comboBox1.Text + ".txt");
-
-
-            //   StreamWriter sw = new StreamWriter(path);
-            //  sw.Write("Ala");
-            // sw.WriteLine(zda);
-            //      sw.WriteLine(" ma kota");
-            //    sw.WriteLine("i tak dalej!");
-            //    sw.WriteLine("end");
-            //    sw.Close();
+               
 
         }
     
@@ -129,11 +75,26 @@ namespace WpfApplication1
         private void button1_Click(object sender, RoutedEventArgs e)
         {
 
-            if (txb_tytul.Text != "" && textBox1.Text != "")
+            if (txb_tytul.Text != "" && textBox1.Text != "" && comboBox1.Text!="")
             {
                 opisy();
             }
-            MessageBox.Show("brak opisów'=");
+            if (txb_tytul.Text != "" && plik== "tak" && comboBox1.Text != "")
+            {
+                
+                string destFile = @"\\plkwim0taxlog57\\c$\\opis\\info\\" + comboBox1.Text + "\\" + txb_tytul.Text + ".pdf";
+                System.IO.File.Copy(z_kat, destFile, true);
+                
+                MessageBox.Show("Zapisano");
+            }
+            if (comboBox1.Text == "")
+                MessageBox.Show("Brak numeru fikstury");
+            if (txb_tytul.Text == "")
+                MessageBox.Show("Brak tytułu");
+            if (plik != "tak" || textBox1.Text == "")
+                MessageBox.Show("Brak opisu lub nie wybrano pliku");
+            
+            plik = "";
 
         }
 
@@ -158,9 +119,9 @@ namespace WpfApplication1
             // Load content of file in a TextBlock
             if (result == true)
             {
-                FileNameTextBox.Text = openFileDlg.FileName;
-               string destFile = @"\\plkwim0taxlog57\\c$\\opis\\info\\" + comboBox1.Text + "\\" + txb_tytul.Text + ".pdf";
-                System.IO.File.Copy(FileNameTextBox.Text, destFile, true);
+                plik = "tak";
+                z_kat = openFileDlg.FileName;
+
 
             }
         }

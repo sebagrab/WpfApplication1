@@ -1534,7 +1534,7 @@ namespace WpfApplication1
             StreamWriter myStreamWriter = myProcess.StandardInput;
 
             myStreamWriter.WriteLine("NET USE \\\\plkwim0taxlog57 /User:kwi_tester Poiuytrewq1");
-            myStreamWriter.WriteLine("\\plkwim0taxlog57\\c$\\Users\\kwi_tester\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe \\plkwim0taxlog57\\c$\\opis\\zdjecia\\brak_zdjec.py");
+            
              myStreamWriter.WriteLine("\\\\plkwim0taxlog57\\c$\\Users\\kwi_tester\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe \\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\brak_zdjec.py");
             myStreamWriter.Close();
             myProcess.WaitForExit();
