@@ -1278,7 +1278,7 @@ namespace WpfApplication1
                     tx = sr.ReadLine();
                     sb.AppendLine(tx);
                     
-                    while ("end" != Convert.ToString(tx) )
+                    while ("end" != Convert.ToString(tx) || znaleziono == "ok")
                     {
                     b = 0;
                     int c = 0;
