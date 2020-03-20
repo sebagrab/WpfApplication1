@@ -27,6 +27,20 @@ namespace WpfApplication1
         string sg;
         string plik="nie";
         string z_kat = "";
+        string fvt;
+        string fix1;
+        string fix2;
+        string fix3;
+        string fix4;
+        int fix11;
+        int fix22;
+        int fix33;
+        int fix44;
+        public int wiersz;
+        string fixtura;
+        string duplikat_fix;
+        string jest;
+        int []tablica =new int [20];
         public Window1()
         {
           //  wbSample.Navigate(@"\\plkwim0taxlog57\\c$\opis\");
@@ -53,12 +67,15 @@ namespace WpfApplication1
         public void opisy()
         {
             zda = "";
+            fixtura = comboBox1.Text;
+            dupikat();
+            if (jest != "ok")
+                duplikat_fix = comboBox1.Text;
+
+            jest = "nok";
 
 
-
-
-            
-            string plik = @"\\plkwim0taxlog57\\c$\opis\info\" + comboBox1.Text +"\\"+txb_tytul.Text+".txt";
+            string plik = @"\\plkwim0taxlog57\\c$\opis\info\" + duplikat_fix +"\\"+txb_tytul.Text+".txt";
             
             File.WriteAllText(plik, textBox1.Text);
             MessageBox.Show("zapisano");
@@ -81,8 +98,12 @@ namespace WpfApplication1
             }
             if (txb_tytul.Text != "" && plik== "tak" && comboBox1.Text != "")
             {
-                
-                string destFile = @"\\plkwim0taxlog57\\c$\\opis\\info\\" + comboBox1.Text + "\\" + txb_tytul.Text + ".pdf";
+                fixtura = comboBox1.Text;
+                dupikat();
+                if (jest != "ok")
+                    duplikat_fix = comboBox1.Text;
+                jest = "nok";
+                string destFile = @"\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix + "\\" + txb_tytul.Text + ".pdf";
                 System.IO.File.Copy(z_kat, destFile, true);
                 
                 MessageBox.Show("Zapisano");
@@ -92,7 +113,7 @@ namespace WpfApplication1
             if (txb_tytul.Text == "")
                 MessageBox.Show("Brak tytułu");
             if (plik != "tak" || textBox1.Text == "")
-                MessageBox.Show("Brak opisu lub nie wybrano pliku");
+                //MessageBox.Show("Brak opisu lub nie wybrano pliku");
             
             plik = "";
 
@@ -125,5 +146,117 @@ namespace WpfApplication1
 
             }
         }
+
+        public void dupikat()
+        {
+            string path = (@"\\plkwim0taxlog57\\c$\opis\duplikat.txt");
+            if (File.Exists(path))
+            {
+                wiersz = 0;
+                int c = 0;
+                string dupilkat = "";
+                string dupilkat1 = "";
+                string dupilkat2 = "";
+                string dupilkat3 = "";
+                string tx;
+                string jest = "nok";
+                StringBuilder sb = new StringBuilder(path);
+
+                StreamReader sr = new StreamReader(path);
+
+                tx = sr.ReadLine();
+                sb.AppendLine(tx);
+                wiersz++;
+                while ("end" != Convert.ToString(tx))
+                {
+                    string[] duplik = new string[20];
+                    string[] duplik1 = new string[20];
+                    string[] duplik2 = new string[20];
+                    string[] duplik3 = new string[20];
+                    while (Convert.ToString(tx[c]) != "," && Convert.ToString(tx[c]) != ";")
+                    {
+                        duplik[c] = Convert.ToString(tx[c]);
+                        c++;
+
+                    }
+
+                    dupilkat = String.Concat(duplik);
+
+                    if (dupilkat == fixtura)
+                        jest = "ok";
+                    if (Convert.ToString(tx[c]) != ";")
+                        c++;
+                    while (Convert.ToString(tx[c]) != "," && Convert.ToString(tx[c]) != ";")
+                    {
+                        duplik1[c] = Convert.ToString(tx[c]);
+                        c++;
+
+                    }
+
+                    dupilkat1 = String.Concat(duplik1);
+                    if (dupilkat1 == fixtura)
+                        jest = "ok";
+                    if (Convert.ToString(tx[c]) != ";")
+                        c++;
+                    while (Convert.ToString(tx[c]) != "," && Convert.ToString(tx[c]) != ";")
+                    {
+                        duplik2[c] = Convert.ToString(tx[c]);
+                        c++;
+
+                    }
+
+                    dupilkat2 = String.Concat(duplik2);
+                    if (dupilkat2 == fixtura)
+                        jest = "ok";
+                    if (Convert.ToString(tx[c]) != ";")
+                        c++;
+                    while (Convert.ToString(tx[c]) != "," && Convert.ToString(tx[c]) != ";")
+                    {
+                        duplik3[c] = Convert.ToString(tx[c]);
+                        c++;
+
+                    }
+
+                    dupilkat3 = String.Concat(duplik3);
+                    if (dupilkat3 == fixtura)
+                        jest = "ok";
+
+
+                    if (jest == "ok")
+                    {
+                        fix1 = dupilkat;    //numery fikstur do tego samego programu 
+                        fix2 = dupilkat1;
+                        fix3 = dupilkat2;
+                        fix4 = dupilkat3;
+                        int fix11 = Int32.Parse(fix1);
+                        int fix22 = Int32.Parse(fix2);
+                        int fix33 = Int32.Parse(fix3);
+                        int fix44 = Int32.Parse(fix4);
+                        int[] tablica = { fix11, fix22, fix33, fix44};
+                        Array.Sort(tablica);
+                        
+                        duplikat_fix = tablica[0].ToString();
+                        fixtura = dupilkat + " , " + dupilkat1;
+                        if (dupilkat2 != "")
+                            fixtura = fixtura + " , " + dupilkat2;
+                        if (dupilkat3 != "")
+                            fixtura = fixtura + " , " + dupilkat3;
+                        jest = "nok";
+                    }
+                    if (jest != "ok")
+                    {
+                        wiersz++;
+                    }
+                    tx = sr.ReadLine();
+                    sb.AppendLine(tx);
+                    c = 0;
+                }
+                sr.Close();
+            }
+
+
+        }
+
+
     }
 }

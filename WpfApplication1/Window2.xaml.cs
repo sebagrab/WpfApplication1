@@ -151,7 +151,7 @@ namespace WpfApplication1
                 
                 skladnia = program + "," + soft + "," + hardwer + "," + fikstura+";";
                // sw.WriteLine(skladnia + zda + "\r\n" + "end" );
-                sw.WriteLine(zda + "\r\n" + skladnia + "\r\n" + "end");
+                sw.WriteLine(skladnia + "\r\n" + zda + "\r\n" + "end");
                 sw.Close();
                 Close();
             }
