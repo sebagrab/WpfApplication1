@@ -911,10 +911,11 @@ namespace WpfApplication1
                 if (znaleziono == "ok")
                 {
                     znaleziono = "nok";
+                    
                     if (File.Exists("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"))
                         Image1.Source = new BitmapImage(new Uri("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
-                    Image1.Source = new BitmapImage(new Uri("\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
-                    Image1.Source = new BitmapImage(new Uri ("\\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
+                    if (File.Exists("\\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"))
+                        Image1.Source = new BitmapImage(new Uri ("\\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\" + fixtura + ".jpg"));
                     fix = fixtura;
                     dupikat();
                    label1.Content = ("Fixtura nr " + fixtura);

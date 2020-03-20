@@ -51,6 +51,6 @@
                 <ImageBrush ImageSource="Images/Info.jpg"/>
             </Button.Background>
         </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="366,625,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Mapowanie dysku i python" HorizontalAlignment="Left" Margin="366,593,0,0" VerticalAlignment="Top" Width="174" Click="Button_Click" Height="52"/>
     </Grid>
 </Window>
