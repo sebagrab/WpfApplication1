@@ -39,7 +39,7 @@ namespace WpfApplication1
         public int wiersz;
         string fixtura;
         string duplikat_fix;
-        string jest;
+        string jest="nok";
         int []tablica =new int [20];
         public Window1()
         {
@@ -69,13 +69,14 @@ namespace WpfApplication1
             zda = "";
             fixtura = comboBox1.Text;
             dupikat();
+            
             if (jest != "ok")
                 duplikat_fix = comboBox1.Text;
 
             jest = "nok";
 
-
-            string plik = @"\\plkwim0taxlog57\\c$\opis\info\" + duplikat_fix +"\\"+txb_tytul.Text+".txt";
+            
+            string plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix +"\\"+txb_tytul.Text+".txt";
             
             File.WriteAllText(plik, textBox1.Text);
             MessageBox.Show("zapisano");
@@ -103,7 +104,7 @@ namespace WpfApplication1
                 if (jest != "ok")
                     duplikat_fix = comboBox1.Text;
                 jest = "nok";
-                string destFile = @"\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix + "\\" + txb_tytul.Text + ".pdf";
+                string destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix + "\\" + txb_tytul.Text + ".pdf";
                 System.IO.File.Copy(z_kat, destFile, true);
                 
                 MessageBox.Show("Zapisano");
@@ -149,7 +150,7 @@ namespace WpfApplication1
 
         public void dupikat()
         {
-            string path = (@"\\plkwim0taxlog57\\c$\opis\duplikat.txt");
+            string path = (@"\\\\plkwim0taxlog57\\c$\\opis\\duplikat.txt");
             if (File.Exists(path))
             {
                 wiersz = 0;
@@ -159,7 +160,7 @@ namespace WpfApplication1
                 string dupilkat2 = "";
                 string dupilkat3 = "";
                 string tx;
-                string jest = "nok";
+                jest = "nok";
                 StringBuilder sb = new StringBuilder(path);
 
                 StreamReader sr = new StreamReader(path);
@@ -223,10 +224,14 @@ namespace WpfApplication1
 
 
                     if (jest == "ok")
-                    {
+                    {   
                         fix1 = dupilkat;    //numery fikstur do tego samego programu 
                         fix2 = dupilkat1;
+                        if (dupilkat2 == "")
+                            dupilkat2 = "999";
                         fix3 = dupilkat2;
+                        if (dupilkat3 == "")
+                            dupilkat3 = "999";
                         fix4 = dupilkat3;
                         int fix11 = Int32.Parse(fix1);
                         int fix22 = Int32.Parse(fix2);
@@ -236,12 +241,10 @@ namespace WpfApplication1
                         Array.Sort(tablica);
                         
                         duplikat_fix = tablica[0].ToString();
-                        fixtura = dupilkat + " , " + dupilkat1;
-                        if (dupilkat2 != "")
-                            fixtura = fixtura + " , " + dupilkat2;
-                        if (dupilkat3 != "")
-                            fixtura = fixtura + " , " + dupilkat3;
-                        jest = "nok";
+                       
+
+
+
                     }
                     if (jest != "ok")
                     {
