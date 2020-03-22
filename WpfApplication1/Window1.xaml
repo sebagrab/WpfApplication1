@@ -14,8 +14,8 @@
         <ComboBox Height="23" HorizontalAlignment="Left" Margin="70.659,17,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" Grid.Column="1" />
         <Label Content="Tytuł" HorizontalAlignment="Left" Margin="12,58,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txb_tytul" HorizontalAlignment="Left" Height="23" Margin="12.659,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" Grid.Column="1" />
-        <Button Content="Wybierz plik ..." HorizontalAlignment="Left" Margin="55,272,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click" Height="27" Grid.Column="1"/>
+        <Button Content="Dodaj plik pdf" HorizontalAlignment="Left" Margin="16,273,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click" Height="27" Grid.ColumnSpan="2"/>
         <Label Content="Opis" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.239,-0.902" Height="29" Width="53" Grid.ColumnSpan="2"/>
-        <Label Content="Dodaj plik pdf" HorizontalAlignment="Left" Margin="10,273,0,0" VerticalAlignment="Top" Width="100" Height="30" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelsciezka" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="71,273,0,0" VerticalAlignment="Top" Width="228" FontSize="10"/>
     </Grid>
 </Window>

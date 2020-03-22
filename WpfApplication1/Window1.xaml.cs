@@ -143,7 +143,7 @@ namespace WpfApplication1
             {
                 plik = "tak";
                 z_kat = openFileDlg.FileName;
-
+                labelsciezka.Content = z_kat;
 
             }
         }
@@ -153,7 +153,7 @@ namespace WpfApplication1
             string path = (@"\\\\plkwim0taxlog57\\c$\\opis\\duplikat.txt");
             if (File.Exists(path))
             {
-                wiersz = 0;
+                
                 int c = 0;
                 string dupilkat = "";
                 string dupilkat1 = "";
@@ -167,8 +167,8 @@ namespace WpfApplication1
 
                 tx = sr.ReadLine();
                 sb.AppendLine(tx);
-                wiersz++;
-                while ("end" != Convert.ToString(tx))
+                
+                while ("end" != Convert.ToString(tx) && "ok"!=jest)
                 {
                     string[] duplik = new string[20];
                     string[] duplik1 = new string[20];
@@ -246,10 +246,7 @@ namespace WpfApplication1
 
 
                     }
-                    if (jest != "ok")
-                    {
-                        wiersz++;
-                    }
+                    
                     tx = sr.ReadLine();
                     sb.AppendLine(tx);
                     c = 0;
