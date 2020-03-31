@@ -798,6 +798,20 @@ namespace WpfApplication1
 
         }
 
-        
+        private void DodajZdjecie(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("DODAJ ZDJECIE");
+          //  Window1 fix = new Window1();
+           // fix.Show();
+        }
+
+
+        private void Szukaj_TE(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("DODAJ te");
+            //  Window1 fix = new Window1();
+            // fix.Show();
+        }
+
     }
 }

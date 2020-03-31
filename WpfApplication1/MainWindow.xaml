@@ -51,6 +51,26 @@
                 <ImageBrush ImageSource="Images/Info.jpg"/>
             </Button.Background>
         </Button>
-        <Button Content="Mapowanie dysku i python" HorizontalAlignment="Left" Margin="366,593,0,0" VerticalAlignment="Top" Width="174" Click="Button_Click" Height="52"/>
+        <Button Content="Mapowanie dysku i python" HorizontalAlignment="Left" Margin="409,599,0,0" VerticalAlignment="Top" Width="174" Click="Button_Click" Height="52"/>
+        <Menu Height="100" Margin="483,27,0,0" Width="78" VerticalAlignment="Top" Background="{x:Null}">
+            <MenuItem Header="" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="39" Height="32" RenderTransformOrigin="0.5,0.5" >
+                <MenuItem.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.716"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.238"/>
+                    </TransformGroup>
+                </MenuItem.RenderTransform>
+                <MenuItem.Background>
+                    <ImageBrush ImageSource="Menu1.bmp" Stretch="Uniform"/>
+                </MenuItem.Background>
+                <Button Content="Dodaj zdjęcie" Background="{x:Null}" Click="DodajZdjecie"/>
+                <Separator/>
+                <Button Background="{x:Null}" Content="Szukaj fikstury" Click="Szukaj_TE"/>
+            </MenuItem>
+        </Menu>
+
+
     </Grid>
 </Window>
