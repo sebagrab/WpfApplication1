@@ -70,6 +70,25 @@ namespace WpfApplication1
             InitializeComponent();
             label1.Content = " ";
             button5.Visibility = Visibility.Collapsed;
+
+            ////////////////////////////////////////
+            Process myProcess = new Process();
+
+            myProcess.StartInfo.FileName = @"cmd.exe";
+            myProcess.StartInfo.UseShellExecute = false;
+            myProcess.StartInfo.RedirectStandardInput = true;
+            myProcess.Start();
+
+            StreamWriter myStreamWriter = myProcess.StandardInput;
+
+            myStreamWriter.WriteLine("NET USE \\\\plkwim0taxlog57 /User:kwi_tester Poiuytrewq1");
+
+
+            myStreamWriter.Close();
+            myProcess.WaitForExit();
+
+            ////////////////////////////////////////
+
         }
         
         private void txtBarcode_KeyDown(object sender, KeyEventArgs e)
@@ -790,7 +809,7 @@ namespace WpfApplication1
 
             myStreamWriter.WriteLine("NET USE \\\\plkwim0taxlog57 /User:kwi_tester Poiuytrewq1");
             
-             myStreamWriter.WriteLine("\\\\plkwim0taxlog57\\c$\\Users\\kwi_tester\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe \\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\brak_zdjec.py");
+             
             myStreamWriter.Close();
             myProcess.WaitForExit();
             
@@ -800,17 +819,17 @@ namespace WpfApplication1
 
         private void DodajZdjecie(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("DODAJ ZDJECIE");
-          //  Window1 fix = new Window1();
-           // fix.Show();
+
+            Window3 dodajZdjecie = new Window3();
+           dodajZdjecie.Show();
         }
 
 
         private void Szukaj_TE(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("DODAJ te");
-            //  Window1 fix = new Window1();
-            // fix.Show();
+            
+              Window4 szukajTE = new Window4();
+             szukajTE.Show();
         }
 
     }
