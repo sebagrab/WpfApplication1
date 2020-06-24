@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="Szukaj numeru TE" Height="450" Width="800">
+        Title="Szukaj numeru TE" Height="244" Width="779">
     <Grid>
         <ComboBox x:Name="combobox" HorizontalAlignment="Left" Margin="177,52,0,0" VerticalAlignment="Top" Width="120" Height="29" SelectionChanged="combobox_SelectionChanged"/>
         <Label Content="Numer fixtury" HorizontalAlignment="Left" Margin="43,52,0,0" VerticalAlignment="Top" Height="49" Width="129" FontSize="16"/>

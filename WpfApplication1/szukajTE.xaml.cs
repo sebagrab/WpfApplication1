@@ -39,8 +39,8 @@ namespace WpfApplication1
             label_numerte.Content = "";
             string szukaj = (string)combobox.SelectedItem;
             string numer = "";
-            //string path = (@"\\\\plkwim0taxlog57\\c$\\opis\\numeryTE.txt");
-            string path = (@"c:\\opis\\numeryTE.txt");
+            string path = (@"\\\\plkwim0taxlog57\\c$\\opis\\numeryTE.txt");
+            //string path = (@"c:\\opis\\numeryTE.txt");
             if (File.Exists(path))
             {
                 StringBuilder sb = new StringBuilder();

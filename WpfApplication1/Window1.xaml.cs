@@ -41,6 +41,10 @@ namespace WpfApplication1
         string duplikat_fix;
         string jest="nok";
         int []tablica =new int [20];
+        string dupilkat = "";
+        string dupilkat1 = "";
+        string dupilkat2 = "";
+        string dupilkat3 = "";
         public Window1()
         {
           //  wbSample.Navigate(@"\\plkwim0taxlog57\\c$\opis\");
@@ -71,14 +75,41 @@ namespace WpfApplication1
             dupikat();
             
             if (jest != "ok")
+            {
                 duplikat_fix = comboBox1.Text;
+                jest = "nok";
 
-            jest = "nok";
+                string plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix + "\\" + txb_tytul.Text + ".txt";
+                File.WriteAllText(plik, textBox1.Text);
 
-            
-            string plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix +"\\"+txb_tytul.Text+".txt";
-            
-            File.WriteAllText(plik, textBox1.Text);
+            }
+               
+            if (jest == "ok")
+            {
+                string plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat + "\\" + txb_tytul.Text + ".txt";
+                File.WriteAllText(plik, textBox1.Text);
+
+                plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat1 + "\\" + txb_tytul.Text + ".txt";
+                File.WriteAllText(plik, textBox1.Text);
+
+                if(dupilkat2 != "")
+                {
+                    plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat2 + "\\" + txb_tytul.Text + ".txt";
+                    File.WriteAllText(plik, textBox1.Text);
+
+                }
+
+                if (dupilkat3 != "")
+                {
+                    plik = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat3 + "\\" + txb_tytul.Text + ".txt";
+                    File.WriteAllText(plik, textBox1.Text);
+
+                }
+
+            }
+
+
+
             MessageBox.Show("zapisano");
 
             
@@ -102,11 +133,34 @@ namespace WpfApplication1
                 fixtura = comboBox1.Text;
                 dupikat();
                 if (jest != "ok")
+                {
                     duplikat_fix = comboBox1.Text;
-                jest = "nok";
-                string destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix + "\\" + txb_tytul.Text + ".pdf";
-                System.IO.File.Copy(z_kat, destFile, true);
-                
+                    jest = "nok";
+                    string destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + duplikat_fix + "\\" + txb_tytul.Text + ".pdf";
+                    System.IO.File.Copy(z_kat, destFile, true);
+                }
+
+                if(jest=="ok")
+                {
+                    string destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat + "\\" + txb_tytul.Text + ".pdf";
+                    System.IO.File.Copy(z_kat, destFile, true);
+
+                    destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat1 + "\\" + txb_tytul.Text + ".pdf";
+                    System.IO.File.Copy(z_kat, destFile, true);
+
+                    if(dupilkat2 != "")
+                    {
+                        destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat2 + "\\" + txb_tytul.Text + ".pdf";
+                        System.IO.File.Copy(z_kat, destFile, true);
+                    }
+
+                    if (dupilkat3 != "")
+                    {
+                        destFile = @"\\\\plkwim0taxlog57\\c$\\opis\\info\\" + dupilkat3 + "\\" + txb_tytul.Text + ".pdf";
+                        System.IO.File.Copy(z_kat, destFile, true);
+                    }
+
+                }
                 MessageBox.Show("Zapisano");
             }
             if (comboBox1.Text == "")
