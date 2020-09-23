@@ -145,6 +145,8 @@
     <Resource Include="Images\Info.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Info.jpg" />
+    <Resource Include="dodaj.png" />
     <Content Include="Images\python\brak_zdjec.py" />
     <Resource Include="Menu1.bmp" />
     <Resource Include="Menu.bmp" />

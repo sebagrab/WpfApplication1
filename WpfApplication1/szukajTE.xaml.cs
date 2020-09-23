@@ -82,5 +82,65 @@ namespace WpfApplication1
                 }
             }
         }
+
+        private void NumerTeBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //MessageBox.Show("tuuu");
+            string tx = "";
+            int c = 0;
+            NumerFixLabel.Content = "";
+            string szukaj = (string)NumerTeBox.Text;
+            string numer = "";
+            string path1 = (@"\\\\plkwim0taxlog57\\c$\\opis\\numeryTE.txt");
+            //string path1 = (@"c:\\opis\\numeryTE.txt");
+            if (File.Exists(path1))
+            {
+                StringBuilder sb = new StringBuilder();
+
+                StreamReader sr = new StreamReader(path1);
+                tx = sr.ReadLine();
+                sb.AppendLine(tx);
+                while ("end" != Convert.ToString(tx))
+                {
+                    string[] numerTE = new string[30];
+                    while(Convert.ToString(tx[c]) != ",")
+                    {
+                        c++;
+                    }
+                    c++;
+                    while (Convert.ToString(tx[c]) != "," && Convert.ToString(tx[c]) != ";")
+                    {
+                        numerTE[c] = Convert.ToString(tx[c]);
+                        c++;
+
+                    }
+                    numer = String.Concat(numerTE);
+                    
+                    c++;
+                    if (numer == szukaj)
+                    {
+                        c = 0;
+                        int p = 0;
+                        string[] numerp = new string[30];
+                        while (Convert.ToString(tx[c]) != "," && Convert.ToString(tx[c]) != ";")
+                        {
+                            numerp[p] = Convert.ToString(tx[c]);
+                            c++;
+                            p++;
+
+                        }
+                        NumerFixLabel.Content = String.Concat(numerp);
+
+                    }
+                    c = 0;
+                    tx = sr.ReadLine();
+                    sb.AppendLine(tx);
+
+                }
+            }
+
+
+
+        }
     }
 }

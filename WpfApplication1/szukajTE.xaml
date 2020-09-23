@@ -11,6 +11,10 @@
         <Label Content="Numer fixtury" HorizontalAlignment="Left" Margin="43,52,0,0" VerticalAlignment="Top" Height="49" Width="129" FontSize="16"/>
         <Label Content="Numer TE" HorizontalAlignment="Left" Margin="362,52,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label_numerte" Content="" HorizontalAlignment="Left" Margin="486,52,0,0" VerticalAlignment="Top" Width="89" FontSize="16"/>
+        <Label Content="Numer TE" HorizontalAlignment="Left" Margin="43,122,0,0" VerticalAlignment="Top" Width="129" Height="43" FontSize="16"/>
+        <TextBox x:Name="NumerTeBox" HorizontalAlignment="Left" Height="30" Margin="177,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NumerTeBox_TextChanged"/>
+        <Label Content="Numer fixtury" HorizontalAlignment="Left" Margin="362,122,0,0" VerticalAlignment="Top" Height="30" Width="119" FontSize="16"/>
+        <Label x:Name="NumerFixLabel" Content="" HorizontalAlignment="Left" Margin="486,126,0,0" VerticalAlignment="Top" Width="89"/>
 
     </Grid>
 </Window>
